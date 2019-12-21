@@ -6,7 +6,8 @@ var Account = new Schema({
     name: String,
     password: String,
     email: {type: String, unique:true},
-    permission: String
+    permission: String,
+    assignment:{ type:[mongoose.Schema.Types.ObjectId], required:false }
 });
 
 

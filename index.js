@@ -42,11 +42,13 @@ mongoose
   });
 
   const index_route=require('./routes/index');
- /*  const admin_route=require('./routes/admin');
-  const problem_route=require('./routes/problems'); */
+  const admin_route=require('./routes/admin');
+  
+  // const problem_route=require('./routes/problems');
 
-  app.use('/',index_route);
-/*   app.use('/admin',admin_route);
-  app.use('/problems',problem_route); */
+  app.use('/api/index',index_route);
+  app.use('/api/admin',admin_route);
+
+  // app.use('/problems',problem_route);
 
   app.listen(server_port,()=>{console.log(`Server started on port ${server_port}!`)});
