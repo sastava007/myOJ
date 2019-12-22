@@ -5,21 +5,25 @@ const Assignment = require('../models/assignment');
 const Announcement = require('../models/announcement'); */
 
 
-exports.get_admin=async function(req,res){
+exports.get_assignment=async function(req,res){
 
     //first get list of all assignments created by our user
-    const assignments=await User.find({email:req.body.email}, {assignment:1});
+
+    let assignments=await User.findOne({email:req.headers.email}, {assignment:1});
     const result=[];
 
     if(assignments)
     {
-        console.log(assignments);
-            assignments.forEach(element => {
-            const res=Assignment.findById(element);
-            result.push(res);
-        });
-
-        return res.status(200).send({Assignments: result});
+            assignments=assignments.assignment;
+            for(const element of assignments)
+            {
+                await Assignment.findOne({_id:element})
+                    .then((asgn)=>{
+                        result.push(asgn);
+                    })
+                    .catch((err)=>{console.log(err.message)});
+            }
+            res.status(200).send(result);
     }
     else
     return res.status(400).send({message:"No assignment found"});
@@ -52,4 +56,35 @@ exports.post_new_assignment =async function(req,res){
             });  
         }
     });
+}
+
+exports.post_new_problem=async function(req,res){
+
+    if (!req.body.hasOwnProperty('test-input')) {
+        return res.status(400).send({message: 'Empty testcase'});
+    }
+    var testcases = [];
+
+    for (var i=0;i<req.body['test-input'].length;i++) {
+        testcases.push({in: req.body['test-input'][i], out: req.body['test-output'][i]})
+    }
+
+    const new_prob = {
+        pid: req.body.pid,
+        name: req.body.name,
+        desc: req.body.desc,
+        time_limit: req.body.time_limit,
+        avail: true,
+        test_cases:testcases
+    };
+
+    console.log(new_prob.desc);
+
+    Assignment.updateOne({asg_code:req.body.asg_code},{$push:{problems:new_prob}},(err,asgn)=>{
+
+        if(err)
+        return res.send({message:"Couldn't add problem to given assignment"});
+        else
+        return res.status(200).send({assignment:asgn});
+    })
 }

@@ -2,13 +2,13 @@ const express=require('express');
 const router=express.Router();
 const admin_controller=require('../controllers/admin_controller');
 
-router.get('/', admin_controller.get_admin);
+router.get('/', admin_controller.get_assignment);
 
 router.post('/newasgn',admin_controller.post_new_assignment);
 
-// router.put('/updateasgn/:asg_code',admin_controller.put_update_assignment);
+router.post('/asgn/newprob',admin_controller.post_new_problem);
 
-/* router.post('/asgn/newprob',admin_controller.post_new_problem);
+/* router.put('/updateasgn/:asg_code',admin_controller.put_update_assignment);
 
 router.delete('/asgn/prob/:asg_code/:pid',admin_controller.post_new_problem);
 

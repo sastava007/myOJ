@@ -16,6 +16,7 @@ const Assignment =new Schema({
             description:String,
             time_limit:Number,
             solved:[String],
+            avail:Boolean,
             test_cases:[
                 {
                     in:String,
