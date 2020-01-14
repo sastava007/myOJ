@@ -94,5 +94,41 @@ exports.post_new_submission=async function(req,res){
     .catch((err)=>{
         return res.send(err.message)
     });
+}
 
+exports.get_submission_details_id=function(req,res){
+    Submission.findOne({_id:req.params.id},(err,submission)=>{
+        if(err) 
+            return res.send(err.message);
+        else
+            return res.send(submission);
+    });
+}
+
+exports.get_submission_details_email=function(req,res){
+
+    Submission.find({email:req.params.email},(err,submission)=>{
+        if(err)
+            return res.send(err.message);
+        else
+            return res.send(submission);
+    });
+}
+
+exports.get_submission_details_asg=function(req,res){
+    Submission.find({asg_code:req.params.asg_code},(err,submission)=>{
+        if(err) 
+            return res.send(err.message);
+        else    
+            return res.send(submission);
+    });
+}
+
+exports.get_submission_details_pid=function(req,res){
+    Submission.findOne({asg_code:req.params.asg_code, pid:req.params.pid},(err,submission)=>{
+        if(err)
+            return res.send(err.message);
+        else
+            return res.send(submission);
+    });
 }
