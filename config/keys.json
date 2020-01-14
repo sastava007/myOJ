@@ -4,6 +4,6 @@
     "connection_string": "mongodb+srv://sastava007:abcd1234@cluster0-mamud.mongodb.net/test?retryWrites=true&w=majority",
     "db_user": "sastava007",
     "db_pass": "abcd1234",
-    "session_secret": "SESSION_SECRET",
+    "api_key": "cd241e2891af80b48e75d6ca258b4cba014ecf1a",
     "secret":"abcd1234"
 }
