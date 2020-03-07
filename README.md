@@ -13,11 +13,24 @@ An online programming judge cum auto gradder web application.
  Node: 10.17.0
  NPM: 6.11.3
 
-**Project Proposal**
-For getting a better understanding behind the concept of this application, please go through [this](https://drive.google.com/file/d/14Gb_shopWXaJ61Qqr1etrUVlxtHfdEIZ/view?usp=sharing)  
+**Software Docs**
+
+This project is built under the courseware of Software Engineering Lab BCCS-2207 following the agile software development cycle. 
+You can find all the design docs attached below: 
+
+[Project Proposal](https://drive.google.com/file/d/14Gb_shopWXaJ61Qqr1etrUVlxtHfdEIZ/view?usp=sharing)
+
+
+[Software Requirement Specification (SRS)](https://drive.google.com/file/d/1WBM0xQvoB1W12fewuMrUECE5U5Gr4Ivm/view?usp=sharing)  
+
+
+[Project Cost Estimation Report](https://drive.google.com/file/d/19KvX5wjePSC-q6Q_oqMqr32_PKr80NJW/view?usp=sharing)  
 
 **Contributors**
 
 Shivansh Srivastava | [@sastava007](https://github.com/sastava007/)
 
 Kartikeya Sharma |  [@kartkeya54](https://github.com/kartikeya54)
+
+**File Structure**
+Backend is located in [@sastava007](https://github.com/sastava007/myOJ/tree/sastava007) branch and we are looking for contributors who can help us to design/code the frontend in JS frameworks like Vue and React. If you want to report some bug or request a feature then please feel free to write to _sastava007@gmail.com_. 
