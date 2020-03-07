@@ -1,0 +1,9 @@
+{
+    "server_port": 8080,
+    "using_connection_string": true,
+    "connection_string": "mongodb+srv://sastava007:abcd1234@cluster0-mamud.mongodb.net/test?retryWrites=true&w=majority",
+    "db_user": "sastava007",
+    "db_pass": "abcd1234",
+    "api_key": "cd241e2891af80b48e75d6ca258b4cba014ecf1a",
+    "secret":"abcd1234"
+}
