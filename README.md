@@ -3,6 +3,8 @@
 
 myOJ is an online coding assignment grading application which automates the process of creating assignments, adding coding problems, and judging them in an online environment. This platform allows the professors/ teaching assistants to setup an assignment, add problems to it with specific test cases and time limit ensuring that only efficient solution can pass the test cases and once the deadline is reached it will stop taking any further submission and send a detailed performance report of students to the professor through an automated mail.
 
+Github Repository: https://github.com/sastava007/myOJ
+
 ## Features
 
  - To automate the process of assignment submission and grading. 
