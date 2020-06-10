@@ -1,36 +1,43 @@
-# myOJ
-An online programming judge cum auto gradder web application.
-# Contributing Guide
+## myOJ : An Online Autograding Application
 
- - Fork this repositry and then clone the forked copy of it on your machine.
- - And don't forget to star this repo, as it motivate us to grow our services.
- - Now make a new branch with your username as name and switch to it.
- - After installing the dependencies, create a `config/` folder which includes `keys.json and passport.js` file
- - To ensure that there's no clash because of dependency, use the same version of Node & NPM as it was used during development phase.
- - We follow one commit - one PR policy so don't forget to squash your commits before making any pull request.
+
+myOJ is an online coding assignment grading application which automates the process of creating assignments, adding coding problems, and judging them in an online environment. This platform allows the professors/ teaching assistants to setup an assignment, add problems to it with specific test cases and time limit ensuring that only efficient solution can pass the test cases and once the deadline is reached it will stop taking any further submission and send a detailed performance report of students to the professor through an automated mail.
+
+## Features
+
+ - To automate the process of assignment submission and grading. 
+ -  To provide a complete solution to per-existing system. 
+ - To provide the facility to create online assignments and coding problems which will save a lot of human effort. 
+ - As all the submissions will be made online directly on our portal so it will be an environment friendly approach saving a lot of paper work.
+ - It will also have feature of MOSS (Measure of Software Similarity) to check level of plagiarism, preventing the students from copying assignments.
+ -  Provide a detailed report consisting of statistical information regarding the number of submissions made, no. of accepted solution/ wrong answer/ time limit reached in tabular & graphical format. 
+   
+## How myOJ works ?
+The client side app submits the code and language id to the server through the API. The API then spins up a Docker container for each API request and runs the code using the compiler/interpreter of given language. The program runs inside a virtual machine with limited resources and has a time limit for execution. Once the output is ready, it is sent back to the client as response and docker container is destroyed with all the files from the server.  
+## How to setup myOJ ?
+ - First we need to install Nodejs on your device (prerequisite).
+ - Fork this repository, please star too.
+ - Enter the respective folder, and run *npm install*
+ - Fix dependency issues, if any using *npm audit fix*
+ - Run *npm run serve*
  
- **Versioning**
- Node: 10.17.0
- NPM: 6.11.3
 
-**Software Docs**
+  
 
-This project is built under the courseware of Software Engineering Lab BCCS-2207 following the agile software development cycle. 
-You can find all the design docs attached below: 
-
-[Project Proposal](https://drive.google.com/file/d/14Gb_shopWXaJ61Qqr1etrUVlxtHfdEIZ/view?usp=sharing)
+## Architecture
+To this use this service, all you need is to deploy the Docker file on some free tier server try using (Heroku or Netlify). Once you have deployed your application, all you need is to call the API endpoints from your client application. For better understanding, try seeing the below architecture which is how we are doing at myOJ.
+ 
 
 
-[Software Requirement Specification (SRS)](https://drive.google.com/file/d/1WBM0xQvoB1W12fewuMrUECE5U5Gr4Ivm/view?usp=sharing)  
+<p align="center"> 
+<img src="https://i.imgur.com/MWrhP1W.png">
+</p>
 
+## Technology Stack
+ - Backend : NodeJS + Express
+ -  VueJS as frontend framework
+ - Redis as a database in memory
+ - Docker & Docker Compose
+ 
 
-[Project Cost Estimation Report](https://drive.google.com/file/d/19KvX5wjePSC-q6Q_oqMqr32_PKr80NJW/view?usp=sharing)  
-
-**Contributors**
-
-Shivansh Srivastava | [@sastava007](https://github.com/sastava007/)
-
-Kartikeya Sharma |  [@kartkeya54](https://github.com/kartikeya54)
-
-**File Structure**
-Backend is located in [@sastava007](https://github.com/sastava007/myOJ/tree/sastava007) branch and we are looking for contributors who can help us to design/code the frontend in JS frameworks like Vue and React. If you want to report some bug or request a feature then please feel free to write to _sastava007@gmail.com_. 
+    
