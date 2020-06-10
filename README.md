@@ -14,12 +14,14 @@ myOJ is an online coding assignment grading application which automates the proc
    
 ## How myOJ works ?
 The client side app submits the code and language id to the server through the API. The API then spins up a Docker container for each API request and runs the code using the compiler/interpreter of given language. The program runs inside a virtual machine with limited resources and has a time limit for execution. Once the output is ready, it is sent back to the client as response and docker container is destroyed with all the files from the server.  
+
 ## How to setup myOJ ?
- - First we need to install Nodejs on your device (prerequisite).
+ - Make sure you have NodeJS and MongoDB installed locally
  - Fork this repository, please star too.
  - Enter the respective folder, and run *npm install*
  - Fix dependency issues, if any using *npm audit fix*
  - Run *npm run serve*
+ - PS: If you can't run it locally, then don't worry we have provided the snapshot of different component in ./Screenshots folder
  
 
   
@@ -35,9 +37,13 @@ To this use this service, all you need is to deploy the Docker file on some free
 
 ## Technology Stack
  - Backend : NodeJS + Express
- -  VueJS as frontend framework
- - Redis as a database in memory
- - Docker & Docker Compose
+ - VueJS as frontend framework
+ - MongoDB as database
+ - Code Compilation engine built using Docker & Docker Compose hosted on Heroku 
  
 
-    
+## Team Members
+ - Shivansh Srivastava [2018BCS-053]
+ - Deep Shah [2018BCS-052]
+ - Saurabh Krishan [2018BCS-051]
+ - Adarsh Chaurasiya [2018BCS-002]
